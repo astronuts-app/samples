@@ -48,3 +48,4 @@ jobs:
         with:
           sourceLanguage: 'javascript'
           buildSystem: 'npm'
+          rootDir: ./javascript-sample
