@@ -1,4 +1,4 @@
-name: 'Build: Sample Python'
+name: 'Build: Python Sample'
 
 on:
   push:
@@ -47,3 +47,4 @@ jobs:
         with:
           sourceLanguage: 'python'
           buildSystem: 'pip'
+          rootDir: ./python-sample
