@@ -1,0 +1,6 @@
+venv
+coverage
+.scannerwork
+test-reports
+a/python-sample.iml
+**/__pycache__/
