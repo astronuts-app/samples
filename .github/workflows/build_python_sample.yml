@@ -47,3 +47,4 @@ jobs:
         with:
           sourceLanguage: 'python'
           buildSystem: 'pip'
+        working-directory: ./python-sample
