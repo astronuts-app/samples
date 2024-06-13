@@ -1,4 +1,4 @@
-name: 'Build: Frontend'
+name: 'Build: Javascript Sample'
 
 on:
   push:
@@ -8,6 +8,8 @@ on:
       - feature/*
       - bugfix/*
       - hotfix/*
+    paths:
+      - 'javascript-sample/**'
 
   pull_request:
     branches:
