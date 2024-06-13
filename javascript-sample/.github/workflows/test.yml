@@ -1,0 +1,46 @@
+name: 'Build: Frontend'
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+      - bugfix/*
+      - hotfix/*
+
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - run: npm install
+      - run: npx astronuts-generate
+
+      - name: Log GITHUB_REF_NAME
+        run: |
+          echo "GITHUB_REF is: $GITHUB_REF"
+          echo "GITHUB_HEAD_REF is: $GITHUB_HEAD_REF"
+          echo "GITHUB_EVENT_NAME is: $GITHUB_EVENT_NAME"
+          BRANCH_NAME=$(echo $GITHUB_REF | sed 's|refs/heads/||')
+          echo "GITHUB_REF_NAME is: $BRANCH_NAME"
+
+      - name: Run Astronuts Code Quality Checks
+        uses: astronuts-app/astronuts-code-quality-action@v4
+        with:
+          sourceLanguage: 'javascript'
+          buildSystem: 'npm'
