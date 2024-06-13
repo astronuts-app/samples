@@ -1,0 +1,50 @@
+name: 'Build: Typescript Sample'
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+      - bugfix/*
+      - hotfix/*
+    paths:
+      - 'typescript-sample/**'
+
+  pull_request:
+    branches:
+      - main
+
+    paths:
+      - 'typescript-sample/**'
+
+permissions:
+  contents: read
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./typescript-sample
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          cache-dependency-path: ./typescript-sample/package-lock.json
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install NPM packages
+        run: npm install
+
+      - name: Generate with Astronuts
+        run: npx astronuts-generate
+
+      - name: Run Astronuts Code Quality Checks
+        uses: astronuts-app/astronuts-code-quality-action@v4
+        with:
+          sourceLanguage: 'typescript'
+          buildSystem: 'npm'
