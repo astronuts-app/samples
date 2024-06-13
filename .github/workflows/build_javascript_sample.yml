@@ -24,6 +24,9 @@ permissions:
 jobs:
   Build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./javascript-sample
     steps:
       - uses: actions/checkout@v4
 
@@ -36,15 +39,12 @@ jobs:
 
       - name: Install NPM packages
         run: npm install
-        working-directory: ./javascript-sample
 
       - name: Generate with Astronuts
         run: npx astronuts-generate
-        working-directory: ./javascript-sample
 
       - name: Run Astronuts Code Quality Checks
         uses: astronuts-app/astronuts-code-quality-action@v4
         with:
           sourceLanguage: 'javascript'
           buildSystem: 'npm'
-        working-directory: ./javascript-sample
