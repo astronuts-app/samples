@@ -1,4 +1,4 @@
-# Steps to Run Astronuts Code Quality Checks on your Javascript Project
+# Steps to Run Astronuts Code Quality Checks on your Typescript Project
 
 # Install Astronuts Reporter
 
@@ -41,7 +41,7 @@ Step 2 : Run Astronuts Code Quality Checks on your Python Project.
 - name: Run Astronuts Code Quality Checks
   uses: astronuts-app/astronuts-code-quality-action@v4
   with:
-    sourceLanguage: 'javascript'
+    sourceLanguage: 'typescript
     buildSystem: 'npm'
 ```
 
@@ -49,4 +49,4 @@ For more info you can check the [Astronuts Code Quality Action](https://github.c
 
 For more reference on how to use Astronuts Reporter, you can check the [Astronuts Reporter](https://www.npmjs.com/package/@astronutsapp/astronuts-reporter).
 
-For more info on the workflow file, you can check the [GitHub Actions Workflow Sample](https://github.com/astronuts-app/sample-test/blob/main/.github/workflows/build_javascript_sample.yml).
+For more info on the workflow file, you can check the [GitHub Actions Workflow Sample](https://github.com/astronuts-app/sample-test/blob/main/.github/workflows/build_typescript_sample.yml).
