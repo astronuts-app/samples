@@ -41,7 +41,7 @@ Step 2 : Run Astronuts Code Quality Checks on your Python Project.
 - name: Run Astronuts Code Quality Checks
   uses: astronuts-app/astronuts-code-quality-action@v4
   with:
-    sourceLanguage: 'typescript
+    sourceLanguage: 'typescript'
     buildSystem: 'npm'
 ```
 
