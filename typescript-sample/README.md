@@ -49,4 +49,4 @@ For more info you can check the [Astronuts Code Quality Action](https://github.c
 
 For more reference on how to use Astronuts Reporter, you can check the [Astronuts Reporter](https://www.npmjs.com/package/@astronutsapp/astronuts-reporter).
 
-For more info on the workflow file, you can check the [GitHub Actions Workflow Sample](https://github.com/astronuts-app/sample-test/blob/main/.github/workflows/build_typescript_sample.yml).
+For more info on the workflow file, you can check the [GitHub Actions Workflow Sample](https://github.com/astronuts-app/samples/blob/main/.github/workflows/build_typescript_sample.yml).
