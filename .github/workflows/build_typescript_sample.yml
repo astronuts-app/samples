@@ -46,6 +46,4 @@ jobs:
       - name: Run Astronuts Code Quality Checks
         uses: astronuts-app/astronuts-code-quality-action@v4
         with:
-          sourceLanguage: 'typescript'
-          buildSystem: 'npm'
           rootDir: ./typescript-sample
