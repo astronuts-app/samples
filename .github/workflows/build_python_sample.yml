@@ -43,6 +43,6 @@ jobs:
           astronuts-generate
 
       - name: Run Astronuts Code Quality Checks
-        uses: astronuts-app/astronuts-code-quality-action@v4
+        uses: astronuts-app/astronuts-code-quality-action@v5
         with:
           rootDir: ./python-sample
